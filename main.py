@@ -21,11 +21,15 @@ def generate_fibonacci(n: int):
 
 @app.get("/")
 def read_root():
-    return {"message": "Hello, World!"}
+    return {"message": "Hello, Interns!"}
 
 @app.get("/greet/{name}")
 def greet(name: str):
     return {"message": f"Hello, {name}!"}
+
+@app.get("/square/{number}")
+def square(number: int):
+    return {"message": f"Hello, {number * number}!"}
 
 @app.post("/fibonacci/")
 def calculate_fibonacci(request: FibonacciRequest):
